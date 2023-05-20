@@ -49,7 +49,7 @@ input {
 /* Conteneur Message */
 
 #message {
-    display: flex;
+    display: none;
     flex-direction: column;
     background-color: #ffffff;
     border-radius: 6px;
@@ -84,11 +84,24 @@ h3 {
 /* Mise en forme lorsque les exigences sont erronées */
 
 .invalid {
-    color: red;
+    color: #e30022;
 }
 
 .invalid:before {
     position: relative;
     left: -7px;
     content: "✖";
+}
+
+
+/* Lorsque les exigences sont respectées */
+
+.valid {
+    color: #00a000;
+}
+
+.valid:before {
+    position: relative;
+    left: -7px;
+    content: "✔";
 }
