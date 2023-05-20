@@ -4,6 +4,7 @@ let myInput = document.getElementById('psw');
 let letter = document.getElementById('letter');
 let capital = document.getElementById('capital');
 let number = document.getElementById('number');
+let special = document.getElementById('special');
 let length = document.getElementById('length');
 
 /* Lorsque l'utilisateur clique sur le champ du mot de passe,
@@ -66,6 +67,20 @@ myInput.onkeyup = function() {
         classe "invalid" */
         number.classList.remove('valid');
         number.classList.add('invalid');
+    }
+
+    // Valider les caractères spéciaux
+    let specialCase = /[!#$%^&*()+/]/g
+    if(myInput.value.match(specialCase)) {
+        /* Si le mot de passe contient un caractère spécial, enlever la
+        classe "invalid" et ajouter la classe "valid" */
+        special.classList.remove('invalid');
+        special.classList.add('valid');
+    }else {
+        /* Si non, on enlèbe la classe "valid" et on ajoute la 
+        classe "invalid" */
+        special.classList.remove('valid');
+        special.classList.add('invalid');
     }
 
     // Valider la longueur
